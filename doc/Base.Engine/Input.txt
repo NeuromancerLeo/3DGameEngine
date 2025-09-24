@@ -1,0 +1,3 @@
+静态类 Input，提供获取输入相关的功能；
+
+实现了 Input.GetKey()、Input.GetKeyDown()、Input.GetKeyUp() 这三个函数

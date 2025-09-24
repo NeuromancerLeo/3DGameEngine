@@ -1,0 +1,5 @@
+静态类 Window，代表着引擎管理下的游戏窗口；
+
+封装了GLFW相关的函数，如 Window.Create()、Window.ShouldClose()、Window.Terminate()等；
+
+（如需输入功能，请使用 Input 类）
