@@ -65,18 +65,18 @@ public struct Vector2
     }
 
     // 数乘
-    public static Vector2 operator *(Vector2 v1, float scalar)
+    public static Vector2 operator *(Vector2 v, float scalar)
     {
-        return new Vector2(v1.X * scalar, v1.Y * scalar);
+        return new Vector2(v.X * scalar, v.Y * scalar);
     }
 
     // 数除
-    public static Vector2 operator /(Vector2 v1, float scalar)
+    public static Vector2 operator /(Vector2 v, float scalar)
     {
         if (MathF.Abs(scalar) < float.Epsilon)
             throw new DivideByZeroException("Cannot divide vector by zero");
 
-        return new Vector2(v1.X / scalar, v1.Y / scalar);
+        return new Vector2(v.X / scalar, v.Y / scalar);
     }
 
     /// <summary>
