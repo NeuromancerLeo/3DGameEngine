@@ -139,6 +139,20 @@ public struct Vector3
     }
 
     /// <summary>
+    /// 将向量与给定向量叉乘，返回结果.
+    /// </summary>
+    /// <param name="vector3"></param>
+    /// <returns>与给定向量叉乘后的结果（新向量）.</returns>
+    public readonly Vector3 Cross(Vector3 vector3)
+    {
+        return new Vector3(
+            y * vector3.Z - z * vector3.Y,
+            z * vector3.X - x * vector3.Z,
+            x * vector3.Y - y * vector3.X
+        );
+    }
+
+    /// <summary>
     /// 将向量归一化后返回.
     /// <para>注意: 当前向量保持不变，返回一个新的归一化向量</para>
     /// </summary>
