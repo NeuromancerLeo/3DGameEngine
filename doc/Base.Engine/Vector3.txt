@@ -1,0 +1,3 @@
+结构体 Vector3，提供 3 维向量和相关功能；
+
+实现了 Vector3.Length()、Vector3.Dot()、Vector3.Cross() 等基础函数
