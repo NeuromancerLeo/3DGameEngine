@@ -1,7 +1,13 @@
-/// 规定：左手坐标系，Z+ 朝前， Y+ 朝上， X+ 朝右
+using System.Runtime.InteropServices;
 
+/// 规定：左手坐标系，Z+ 朝前， Y+ 朝上， X+ 朝右
 namespace Base.Engine;
 
+/// <summary>
+/// 代表 3 维向量的结构体.
+/// <para>注：与 Matrix 交互时，Vector 定义为行向量</para>
+/// </summary>
+[StructLayout(LayoutKind.Sequential)]
 public struct Vector3
 {
     private float x;
@@ -14,6 +20,14 @@ public struct Vector3
         this.y = y;
         this.z = z;
     }
+
+    public static readonly Vector3 Zero = new(0f, 0f, 0f);
+    public static readonly Vector3 Up = new(0f, 1f, 0f);
+    public static readonly Vector3 Down = new(0f, -1f, 0f);
+    public static readonly Vector3 Left = new(-1f, 0f, 0f);
+    public static readonly Vector3 Right = new(1f, 0f, 0f);
+    public static readonly Vector3 Forward = new(0f, 0f, 1f);
+    public static readonly Vector3 Backward = new(0f, 0f, -1f);
 
     public float X
     {
@@ -53,14 +67,6 @@ public struct Vector3
             z = value;
         }
     }
-
-    public static readonly Vector3 Zero = new(0f, 0f, 0f);
-    public static readonly Vector3 Up = new(0f, 1f, 0f);
-    public static readonly Vector3 Down = new(0f, -1f, 0f);
-    public static readonly Vector3 Left = new(-1f, 0f, 0f);
-    public static readonly Vector3 Right = new(1f, 0f, 0f);
-    public static readonly Vector3 Forward = new(0f, 0f, 1f);
-    public static readonly Vector3 Backward = new(0f, 0f, -1f);
 
     public static Vector3 operator +(Vector3 v)
     {
